@@ -1,5 +1,6 @@
 import express from 'express';
 import PurchaseController from './controllers/PurchaseController';
+import AuthController from './controllers/AuthController';
 
 const router = express.Router();
 
@@ -11,6 +12,9 @@ router.get('/', (req, res) => {
 router.get('/purchases', PurchaseController.getPurchases);
 router.post('/purchases', PurchaseController.createPurchase); 
 
+
+router.post('/login', AuthController.login);
+router.post('/register', AuthController.register);
 // Rutas para productos
 /* router.get('/products', ProductController.getAllProducts);
 router.post('/products', ProductController.createProduct);
