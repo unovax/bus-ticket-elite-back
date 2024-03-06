@@ -21,6 +21,10 @@ const purchaseSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    folio : {
+        type: Number,
+        default: 100
+    },
     /* user_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
