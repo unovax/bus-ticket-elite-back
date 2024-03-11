@@ -2,10 +2,10 @@
 import express from 'express';
 import cors from 'cors';
 import routes from './routes';
-import { PORT, mongoDBURL, mongoDBName } from './config';
 import { connectToDatabase } from './database';
+require('dotenv').config();
 
-connectToDatabase(mongoDBURL + mongoDBName);
+connectToDatabase(process.env.mongoDBURL ?? "" + process.env.mongoDBName ?? "");
 
 const app = express();
 
@@ -17,6 +17,6 @@ app.use(express.json());
 app.use('/api', routes);
 
 // Iniciar el servidor
-app.listen(PORT, () => {
-  console.log('Servidor en ejecución en http://localhost:' + PORT);
+app.listen(process.env.PORT, () => {
+  console.log('Servidor en ejecución en http://localhost:' + process.env.PORT);
 });
