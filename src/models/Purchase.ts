@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const purchaseSchema = new mongoose.Schema({
-    date: {
+    deadline: {
         type: Date,
         default: Date.now
     },
@@ -9,7 +9,7 @@ const purchaseSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    route: {
+    city: {
         type: String,
         default: ""
     },
