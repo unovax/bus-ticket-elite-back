@@ -1,25 +1,25 @@
 import express from 'express';
 import PurchaseController from './controllers/PurchaseController';
 import AuthController from './controllers/AuthController';
+import CardController from './controllers/CardController';
 
 const router = express.Router();
 
-/* import ProductController from '../controllers/ProductController.js'; */
-
-router.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+// Rutas de compras
 router.get('/purchases', PurchaseController.getPurchases);
 router.post('/purchases', PurchaseController.createPurchase); 
+
+// Rutas de tarjetas
+
+router.get('/cards', CardController.getCards);
+router.post('/cards', CardController.createCard);
+
+
+// Rutas de autenticación
 
 
 router.post('/login', AuthController.login);
 router.post('/register', AuthController.register);
-// Rutas para productos
-/* router.get('/products', ProductController.getAllProducts);
-router.post('/products', ProductController.createProduct);
-router.put('/products/:id', ProductController.updateProduct);
-router.delete('/products/:id', ProductController.deleteProduct); */
 
 
 // Exportar el router
