@@ -8,6 +8,7 @@ const router = express.Router();
 // Rutas de compras
 router.get('/purchases', PurchaseController.getPurchases);
 router.post('/purchases', PurchaseController.createPurchase); 
+router.put('/read_qr/:folio', PurchaseController.readQr);
 
 // Rutas de tarjetas
 

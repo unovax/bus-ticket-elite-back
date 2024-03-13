@@ -23,7 +23,7 @@ const purchaseSchema = new mongoose.Schema({
     },
     folio : {
         type: Number,
-        default: 100
+        required: true
     },
     /* user_id: {
         type: mongoose.Schema.Types.ObjectId,

@@ -12,6 +12,5 @@ export const getFolio = () => {
 
     // Formatear la fecha y hora como numérico (DDMMYYYYHHMMSS)
     var dateInNumbers = year + month + day + hour + min + seg;
-
-    console.log("Fecha y hora actual numérica:", dateInNumbers);
+    return dateInNumbers;
 }
